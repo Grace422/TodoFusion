@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "icon": 1,
+            "name": "Apple"
+        },
+        {
+            "icon": 1,
+            "name": "Github"
+        },
+        {
+            "icon": 1,
+            "name": "Google"
+        },
+        {
+            "icon": 1,
+            "name": "Tailwind"
+        },
+        {
+            "icon": 1,
+            "name": "Npm"
+        },
+        {
+            "icon": 1,
+            "name": "Pnpm"
+        } 
+    ]
+}

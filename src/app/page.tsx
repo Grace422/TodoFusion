@@ -1,101 +1,247 @@
 import Image from "next/image";
+import { User } from "lucide-react";
+import Navbar from "../../components/Navbar";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <Navbar />
+      <div className="h-full w-full mx-auto px-40 max-w-[1350px] md:px-20">
+        <div className="flex flex-col items-center justify-center min-h-screen py-40 gap-32">
+          <div className="max-w-2xl text-center flex flex-col gap-5">
+            <h1 className="font-semibold text-3xl">
+              Boost Your Productivity with{" "}
+              <span className="text-primary">TodoFusion</span>
+            </h1>
+            <p className="text-muted-foreground">
+              Transform task management with TodoFusion. Combine powerful to-do
+              lists, productivity tracking, and seamless integrations to stay
+              focused and achieve more
+            </p>
+            <div className="flex gap-5 items-center justify-center">
+              <button>Get Started</button>
+              <button>See how it works</button>
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <div className="border h-full rounded-3xl bg-background/50 backdrop-blur-lg p-5">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/set.webp"
+              alt="site picture"
+              width={900}
+              height={900}
+              objectFit="contain"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+
+      <div className="h-full w-full mx-auto px-40 max-w-[1350px]">
+        <p className="w-full h-full">
+          Trusted by <span className="font-bold">800K+</span> freelancers and{" "}
+          <span className="font-bold">20k+ teams</span> like.
+        </p>
+        <div className="py-10 w-full md:py-20">
+          <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-10">
+            <div className="w-full h-full flex overflow-hidden p-2 flex-row"></div>
+          </div>
+        </div>
+      </div>
+
+      <div className="h-full w-full mx-auto max-w-[1350px] px-4 flex flex-col items-center justify-center py-12 relative gap-10 md:px-20">
+        <div className="w-full h-full">
+          <div className="max-w-xl mx-auto text-start md:text-center">
+            <span className="inline-flex h-full w-full items-center justify-center rounded-full cursor-pointer bg-slate-950 px-4 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+              Know who you are
+            </span>
+            <h2 className="text-3xl font-semibold pt-6 lg:text-4xl">
+              Get to know your habits, Improve them everyday
+            </h2>
+            <p className="text-muted-foreground mt-6">
+              Track your habits consistently, identify patterns, and make small
+              improvements daily to enhance your productivity and well-being
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          <div className="flex flex-col gap-4 bento-card">
+            <div>
+              <h3 className="text-xl font-semibold">Measure time spent</h3>
+              <p className="text-muted-foreground mt-4">
+                Get a deep understanding of where your time goes
+              </p>
+            </div>
+            <div className="flex flex-1 bg-muted rounded-2xl" />
+          </div>
+          <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-4 flex-1 bento-card">
+              <div>
+                <h3 className="text-xl font-semibold">Track your habits</h3>
+                <p className="text-muted-foreground mt-4">
+                  Keep track of your habits and see how consistent you are
+                </p>
+              </div>
+              <div className="flex flex-1 bg-muted rounded-2xl p-20" />
+            </div>
+            <div className="flex flex-col gap-4 flex-1 bento-card">
+              <div>
+                <h3 className="text-xl font-semibold">Set goals</h3>
+                <p className="text-muted-foreground mt-4">
+                  Set goals and track your progress
+                </p>
+              </div>
+              <div className="flex flex-1 bg-muted rounded-2xl p-20" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="h-full w-full mx-auto max-w-[1350px] px-4 flex flex-col items-center justify-center py-12 relative gap-10 md:px-20">
+        <div className="w-full h-full">
+          <div className="max-w-md mx-auto text-start md:text-center">
+            <span className="inline-flex h-full w-full items-center justify-center rounded-full cursor-pointer bg-slate-950 px-4 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+              What we offer as price
+            </span>
+            <h2 className="text-3xl font-semibold pt-6 lg:text-4xl">
+              What are peaople saying
+            </h2>
+            <p className="text-muted-foreground mt-6">
+              See how fusion empowers businesses of all sizes. Here's what real
+              people are saying on Twitter
+            </p>
+          </div>
+        </div>
+
+        <div className="w-full h-full">
+          <div className="grid grid-cols-1 gap-5 my-20 mx-auto max-w-3xl md:grid-cols-2">
+            <div className="flex flex-col gap-4 p-8 rounded-xl border border-border bg-background">
+              <div>
+                <h3 className="text-xl font-semibold">Monthly plan</h3>
+                <p className="text-muted-foreground mt-4">
+                  Flexible and affordable. Boost your productivity month by
+                  month.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-4 mt-4">
+                <div className="flex flex-row items-center justify-between">
+                  <span className="text-2xl font-semibold">$4.9</span>
+                  <span className="text-muted-foreground">/month</span>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <div className="flex flex-row items-centergap-2">
+                    <span>Full access to all features</span>
+                  </div>
+                  <div className="flex flex-row items-centergap-2">
+                    <span>Regular updates and new features</span>
+                  </div>
+                  <div className="flex flex-row items-centergap-2">
+                    <span>Premium support</span>
+                  </div>
+                  <div className="flex flex-row items-centergap-2">
+                    <span>No recurring fees</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4 p-8 border border-border bg-background rounded-xl">
+              <div>
+                <h3 className="text-xl font-semibold">Pay once lifetime</h3>
+                <p className="text-muted-foreground mt-4">
+                  One-time payment. Unlimited access forever. Ultimate
+                  productivity investment.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-4 mt-4">
+                <div className="flex flex-row items-center justify-between">
+                  <span className="text-2xl font-semibold">$99</span>
+                  <span className="text-muted-foreground">/month</span>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <div className="flex flex-row items-centergap-2">
+                    <span>Full access to all features</span>
+                  </div>
+                  <div className="flex flex-row items-centergap-2">
+                    <span>Regular updates and new features</span>
+                  </div>
+                  <div className="flex flex-row items-centergap-2">
+                    <span>Premium support</span>
+                  </div>
+                  <div className="flex flex-row items-centergap-2">
+                    <span>No recurring fees</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="h-full w-full mx-auto max-w-[1350px] px-4 flex flex-col items-center justify-center py-12 relative gap-10 md:px-20">
+        <div className="w-full h-full">
+          <div className="max-w-md mx-auto text-start md:text-center">
+            <span className="inline-flex h-full w-full items-center justify-center rounded-full cursor-pointer bg-slate-950 px-4 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+              What they say
+            </span>
+            <h2 className="text-3xl font-semibold pt-6 lg:text-4xl">
+              What are peaople saying
+            </h2>
+            <p className="text-muted-foreground mt-6">
+              See how fusion empowers businesses of all sizes. Here's what real
+              people are saying on Twitter
+            </p>
+          </div>
+        </div>
+
+        <div className="w-full py-10 md:py-20">
+          <div className="relative h-full w-full flex flex-col items-center justify-center overflow-hidden py-10">
+            <div className="group flew overflow-hidden p-2 select-none flex-row [--duration.20s]">
+              <figure className="relative flex-shrink-0 w-64 p-4 border border-border over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer">
+                <div className="flex flex-row items-center gap-2">
+                  <div>
+                    <User />
+                  </div>
+                  <div className="flex flex-col">
+                    <figcaption className="font-medium text-sm">
+                      Username
+                    </figcaption>
+                    <p className="text-muted-foreground text-xs font-medium">
+                      @username
+                    </p>
+                  </div>
+                </div>
+                <blockquote className="mt-2 text-sm">
+                  Nothing the first time and others
+                </blockquote>
+              </figure>
+            </div>
+            <div className="group flew overflow-hidden p-2 select-none flex-row [--duration.20s]">
+              <figure className="relative flex-shrink-0 w-64 p-4 border border-border over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer">
+                <div className="flex flex-row items-center gap-2">
+                  <div>
+                    <User />
+                  </div>
+                  <div className="flex flex-col">
+                    <figcaption className="font-medium text-sm">
+                      Username
+                    </figcaption>
+                    <p className="text-muted-foreground text-xs font-medium">
+                      @username
+                    </p>
+                  </div>
+                </div>
+                <blockquote className="mt-2 text-sm">
+                  Nothing the first time and others
+                </blockquote>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
