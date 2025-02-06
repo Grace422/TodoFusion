@@ -3,6 +3,14 @@ import { User } from "lucide-react";
 import Navbar from "../../components/Navbar";
 
 export default function Home() {
+  const iconData = [
+    { icon: "/apple.png", name: "Apple" },
+    { icon: "/github.png", name: "Github" },
+    { icon: "/instagram.png", name: "Instagram" },
+    { icon: "/linkedin.png", name: "Linkedin" },
+    { icon: "/twitter.png", name: "Twitter" }, 
+    { icon: "/facebook.png", name: "Facebook" },
+  ];
   return (
     <>
       <Navbar />
@@ -28,15 +36,15 @@ export default function Home() {
             </div>
           </div>
 
-            <div className="borders h-full rounded-3xl image-color backdrop-blur-lg p-6 shadow-[0px_0px_100px_5px_rgba(59,92,163,0.4)]">
-              <Image
-                src="/set.webp"
-                alt="site picture"
-                width={900}
-                height={900}
-                objectFit="contain"
-              />
-            </div>
+          <div className="borders h-full rounded-3xl image-color backdrop-blur-lg p-6 shadow-[0px_0px_100px_5px_rgba(59,92,163,0.4)]">
+            <Image
+              src="/set.webp"
+              alt="site picture"
+              width={900}
+              height={900}
+              objectFit="contain"
+            />
+          </div>
         </div>
       </div>
 
@@ -49,7 +57,14 @@ export default function Home() {
         </div>
         <div className="py-10 w-full md:py-20">
           <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-10">
-            <div className="w-full h-full flex overflow-hidden p-2 flex-row"></div>
+            <div className="w-full h-full flex overflow-hidden p-2 flex-row gap-20">
+              {iconData.map((data, index) => (
+                <div key={index} className="flex flex-row items-center justify-center gap-2">
+                  <img src={data.icon} alt={data.name} className="w-10 text-white"/>
+                  <p>{data.name}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -63,7 +78,7 @@ export default function Home() {
             <h2 className="text-3xl font-semibold pt-6 lg:text-4xl">
               Get to know your habits, Improve them everyday
             </h2>
-            <p className="text-muted-foreground mt-6">
+            <p className="text-gray-400 mt-6">
               Track your habits consistently, identify patterns, and make small
               improvements daily to enhance your productivity and well-being
             </p>
@@ -74,17 +89,17 @@ export default function Home() {
           <div className="flex flex-col gap-4 rounded-2xl p-6 bg-background shadow-[0px_0px_10px_10px_rgba(0,0,0,0.9)]">
             <div>
               <h3 className="text-xl font-semibold">Measure time spent</h3>
-              <p className="text-muted-foreground mt-4">
+              <p className="text-gray-500 mt-4">
                 Get a deep understanding of where your time goes
               </p>
             </div>
-            <div className="flex flex-1 bg-gray-800  rounded-2xl" />
+            <div className="hidden md:flex flex-1 bg-gray-800  rounded-2xl" />
           </div>
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-4 flex-1 rounded-2xl p-6 bg-background shadow-[0px_0px_10px_10px_rgba(0,0,0,0.9)]">
               <div>
                 <h3 className="text-xl font-semibold">Track your habits</h3>
-                <p className="text-muted-foreground mt-4">
+                <p className="text-gray-500 mt-4">
                   Keep track of your habits and see how consistent you are
                 </p>
               </div>
@@ -93,7 +108,7 @@ export default function Home() {
             <div className="flex flex-col gap-4 flex-1 rounded-2xl p-6 bg-background shadow-[0px_0px_10px_10px_rgba(0,0,0,0.9)]">
               <div>
                 <h3 className="text-xl font-semibold">Set goals</h3>
-                <p className="text-muted-foreground mt-4">
+                <p className="text-gray-500 mt-4">
                   Set goals and track your progress
                 </p>
               </div>
@@ -103,7 +118,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h-full w-full mx-auto max-w-[1350px] px-4 flex flex-col items-center justify-center py-12 relative gap-10 md:px-20">
+      <div className="h-full w-full mx-auto max-w-[1350px] px-4 flex flex-col items-center justify-center py-32 relative gap-10 md:px-20">
         <div className="w-full h-full">
           <div className="max-w-md mx-auto text-start md:text-center">
             <span className="h-full w-full items-center justify-center border border-blue-800 rounded-full cursor-pointer bg-slate-950 px-4 py-1 text-sm font-medium text-white backdrop-blur-3xl">
@@ -213,45 +228,49 @@ export default function Home() {
 
         <div className="w-full py-10 md:py-20">
           <div className="relative h-full w-full flex flex-col items-center justify-center overflow-hidden py-10">
-            <div className="group flew overflow-hidden p-2 select-none flex-row [--duration.20s]">
-              <figure className="relative flex-shrink-0 w-64 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer">
-                <div className="flex flex-row items-center gap-2">
-                  <div>
-                    <User />
+            <div className="group flex gap-4 overflow-hidden p-2 select-none flex-row [--duration.20s]">
+              {Array.from({ length: 10 }).map((_, index) => (
+                <figure key={index} className="relative w-64 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer">
+                  <div className="flex flex-row items-center gap-2">
+                    <div>
+                      <User />
+                    </div>
+                    <div className="flex flex-col">
+                      <figcaption className="font-medium text-sm">
+                        Username
+                      </figcaption>
+                      <p className="text-muted-foreground text-xs font-medium">
+                        @username
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex flex-col">
-                    <figcaption className="font-medium text-sm">
-                      Username
-                    </figcaption>
-                    <p className="text-muted-foreground text-xs font-medium">
-                      @username
-                    </p>
-                  </div>
-                </div>
-                <blockquote className="mt-2 text-sm">
-                  Nothing the first time and others
-                </blockquote>
-              </figure>
+                  <blockquote className="mt-2 text-sm">
+                    Nothing the first time and others
+                  </blockquote>
+                </figure>
+              ))}
             </div>
-            <div className="group flew overflow-hidden p-2 select-none flex-row [--duration.20s]">
-              <figure className="relative w-64 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer">
-                <div className="flex flex-row items-center gap-2">
-                  <div>
-                    <User />
+            <div className="group flex  gap-4 overflow-hidden p-2 select-none flex-row [--duration.20s]">
+              {Array.from({ length: 10 }).map((_, index) => (
+                <figure key={index} className="relative w-64 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointe">
+                  <div className="flex flex-row items-center gap-2">
+                    <div>
+                      <User />
+                    </div>
+                    <div className="flex flex-col">
+                      <figcaption className="font-medium text-sm">
+                        Username
+                      </figcaption>
+                      <p className="text-muted-foreground text-xs font-medium">
+                        @username
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex flex-col">
-                    <figcaption className="font-medium text-sm">
-                      Username
-                    </figcaption>
-                    <p className="text-muted-foreground text-xs font-medium">
-                      @username
-                    </p>
-                  </div>
-                </div>
-                <blockquote className="mt-2 text-sm">
-                  Nothing the first time and others
-                </blockquote>
-              </figure>
+                  <blockquote className="mt-2 text-sm">
+                    Nothing the first time and others
+                  </blockquote>
+                </figure>
+              ))}
             </div>
           </div>
         </div>
@@ -282,6 +301,9 @@ export default function Home() {
                 Submit
               </button>
             </form>
+            <p className="text-xs text-gray-500">
+              By subscribing you agree with our Privacy Policy
+            </p>
           </div>
         </div>
       </div>
