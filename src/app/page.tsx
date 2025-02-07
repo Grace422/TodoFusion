@@ -17,7 +17,7 @@ export default function Home() {
       <div className="h-full w-full mx-auto px-40 max-w-[1350px] md:px-20 z-10">
         <div className="flex flex-col items-center justify-center min-h-screen py-40 gap-32">
           <div className="max-w-2xl text-center flex flex-col gap-5">
-            <h1 className="font-semibold text-3xl lg:text-[56px] md:text-4xl lg:leading-[60px]">
+            <h1 className="font-semibold  text-black text-3xl lg:text-[56px] md:text-4xl lg:leading-[60px] dark:text-white">
               Boost Your Productivity with{" "}
               <span className="text-violet-800">TodoFusion</span>
             </h1>
@@ -30,7 +30,7 @@ export default function Home() {
               <button className="px-6 py-2 bg-violet-700 rounded-md shadow">
                 Get Started
               </button>
-              <button className="bg-slate-950 rounded-md px-6 py-2 shadow">
+              <button className="bg-white text-black dark:bg-slate-950 dark:text-white rounded-md px-6 py-2 shadow">
                 See how it works
               </button>
             </div>
@@ -50,7 +50,7 @@ export default function Home() {
 
       <div className="h-full w-full mx-auto px-4 md:px-20 text-center max-w-[1350px]">
         <div className="w-full h-full">
-          <p className="mt-6 transition-all duration-300 ease-in-out">
+          <p className="mt-6 transition-all duration-300">
             Trusted by <span className="font-bold">800K+</span> freelancers and{" "}
             <span className="font-bold">20k+ teams</span> like.
           </p>

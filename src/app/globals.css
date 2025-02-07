@@ -2,18 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  @apply transition-colors duration-200;
+}
 :root {
   --background: #ffffff;
   --foreground: #030712;
 }
-
+.dark {
+  --background: #ffffff;
+  --foreground: #030712;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #030712;
-    --foreground: #ededed;
+    --foreground: #030712;
   }
 }
-
 .borders{
   border: 1px solid rgb(255, 255, 255, 0.1)
 }
@@ -46,6 +51,7 @@
 .marquee-content {
   display: flex;
   width: max-content;
+  transform: translateX(50%);
   animation: marquee 100s linear infinite;
 }
 .marquee-content:hover{
@@ -61,6 +67,9 @@
   100% {
     transform: translateX(-100%);
   }
+}
+.animation{
+  transition: ease-in-out;
 }
 
 
