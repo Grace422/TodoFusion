@@ -17,6 +17,11 @@
 .borders{
   border: 1px solid rgb(255, 255, 255, 0.1)
 }
+.borders-nav{
+  border: 1px solid rgb(255, 255, 255, 0.1);
+  border-radius: 50px;
+
+}
 .border-bottom{
   border-bottom: 1px solid rgb(255, 255, 255, 0.1)
 }
@@ -27,6 +32,38 @@
 .image-color{
   background-color: rgba(59, 92, 163, 0.2);
 }
+.marquee {
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: marquee 100s linear infinite;
+}
+.marquee-content:hover{
+  animation-play-state: paused;
+}
+.marquee-bottom .marquee-content{
+  animation-direction: reverse;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
 
 body {
   color: var(--foreground);

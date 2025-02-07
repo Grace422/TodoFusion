@@ -8,13 +8,13 @@ export default function Home() {
     { icon: "/github.png", name: "Github" },
     { icon: "/instagram.png", name: "Instagram" },
     { icon: "/linkedin.png", name: "Linkedin" },
-    { icon: "/twitter.png", name: "Twitter" }, 
+    { icon: "/twitter.png", name: "Twitter" },
     { icon: "/facebook.png", name: "Facebook" },
   ];
   return (
     <>
       <Navbar />
-      <div className="h-full w-full mx-auto px-40 max-w-[1350px] md:px-20">
+      <div className="h-full w-full mx-auto px-40 max-w-[1350px] md:px-20 z-10">
         <div className="flex flex-col items-center justify-center min-h-screen py-40 gap-32">
           <div className="max-w-2xl text-center flex flex-col gap-5">
             <h1 className="font-semibold text-3xl lg:text-[56px] md:text-4xl lg:leading-[60px]">
@@ -50,20 +50,44 @@ export default function Home() {
 
       <div className="h-full w-full mx-auto px-4 md:px-20 text-center max-w-[1350px]">
         <div className="w-full h-full">
-          <p className="mt-6">
+          <p className="mt-6 transition-all duration-300 ease-in-out">
             Trusted by <span className="font-bold">800K+</span> freelancers and{" "}
             <span className="font-bold">20k+ teams</span> like.
           </p>
         </div>
         <div className="py-10 w-full md:py-20">
-          <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-10">
-            <div className="w-full h-full flex overflow-hidden p-2 flex-row gap-20">
+          <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden marquee py-10">
+            <div className="w-full h-full flex overflow-hidden p-2 flex-row gap-20 marquee-content">
+              <div className="flex flex-row gap-20">
               {iconData.map((data, index) => (
-                <div key={index} className="flex flex-row items-center justify-center gap-2">
-                  <img src={data.icon} alt={data.name} className="w-10 text-white"/>
+                <div
+                  key={index}
+                  className="flex flex-row items-center justify-center gap-2"
+                >
+                  <img
+                    src={data.icon}
+                    alt={data.name}
+                    className="w-10 text-white"
+                  />
                   <p>{data.name}</p>
                 </div>
               ))}
+              </div>
+              <div className="flex flex-row gap-20">
+              {iconData.map((data, index) => (
+                <div
+                  key={index + iconData.length}
+                  className="flex flex-row items-center justify-center gap-2"
+                >
+                  <img
+                    src={data.icon}
+                    alt={data.name}
+                    className="w-10 text-white"
+                  />
+                  <p>{data.name}</p>
+                </div>
+              ))}
+              </div>
             </div>
           </div>
         </div>
@@ -228,49 +252,109 @@ export default function Home() {
 
         <div className="w-full py-10 md:py-20">
           <div className="relative h-full w-full flex flex-col items-center justify-center overflow-hidden py-10">
-            <div className="group flex gap-4 overflow-hidden p-2 select-none flex-row [--duration.20s]">
-              {Array.from({ length: 10 }).map((_, index) => (
-                <figure key={index} className="relative w-64 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer">
-                  <div className="flex flex-row items-center gap-2">
-                    <div>
-                      <User />
+            <div className="marquee">
+              <div className="group flex gap-4 overflow-hidden p-2 select-none flex-row [--duration.20s] marquee-content">
+                {Array.from({ length: 10 }).map((_, index) => (
+                  <figure
+                    key={index}
+                    className="relative w-64 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer"
+                  >
+                    <div className="flex flex-row items-center gap-2">
+                      <div>
+                        <User />
+                      </div>
+                      <div className="flex flex-col">
+                        <figcaption className="font-medium text-sm">
+                          Username
+                        </figcaption>
+                        <p className="text-muted-foreground text-xs font-medium">
+                          @username
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex flex-col">
-                      <figcaption className="font-medium text-sm">
-                        Username
-                      </figcaption>
-                      <p className="text-muted-foreground text-xs font-medium">
-                        @username
-                      </p>
+                    <blockquote className="mt-2 text-sm">
+                      Nothing the first time and others
+                    </blockquote>
+                  </figure>
+                ))}
+                {Array.from({ length: 10 }).map((_, index) => (
+                  <figure
+                    key={index}
+                    className="relative w-64 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer"
+                  >
+                    <div className="flex flex-row items-center gap-2">
+                      <div>
+                        <User />
+                      </div>
+                      <div className="flex flex-col">
+                        <figcaption className="font-medium text-sm">
+                          Username
+                        </figcaption>
+                        <p className="text-muted-foreground text-xs font-medium">
+                          @username
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <blockquote className="mt-2 text-sm">
-                    Nothing the first time and others
-                  </blockquote>
-                </figure>
-              ))}
+                    <blockquote className="mt-2 text-sm">
+                      Nothing the first time and others
+                    </blockquote>
+                  </figure>
+                ))}
+              </div>
             </div>
-            <div className="group flex  gap-4 overflow-hidden p-2 select-none flex-row [--duration.20s]">
-              {Array.from({ length: 10 }).map((_, index) => (
-                <figure key={index} className="relative w-64 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointe">
-                  <div className="flex flex-row items-center gap-2">
-                    <div>
-                      <User />
-                    </div>
-                    <div className="flex flex-col">
-                      <figcaption className="font-medium text-sm">
-                        Username
-                      </figcaption>
-                      <p className="text-muted-foreground text-xs font-medium">
-                        @username
-                      </p>
-                    </div>
-                  </div>
-                  <blockquote className="mt-2 text-sm">
-                    Nothing the first time and others
-                  </blockquote>
-                </figure>
-              ))}
+            <div className="marquee-bottom">
+              <div className="group flex  gap-4 overflow-hidden p-2 select-none flex-row [--duration.20s] marquee-content">
+                <div className="flex gap-4 marquee-inner flex-row">
+                  {Array.from({ length: 10 }).map((_, index) => (
+                    <figure
+                      key={index}
+                      className="relative w-64 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointe"
+                    >
+                      <div className="flex flex-row items-center gap-2">
+                        <div>
+                          <User />
+                        </div>
+                        <div className="flex flex-col">
+                          <figcaption className="font-medium text-sm">
+                            Username
+                          </figcaption>
+                          <p className="text-muted-foreground text-xs font-medium">
+                            @username
+                          </p>
+                        </div>
+                      </div>
+                      <blockquote className="mt-2 text-sm">
+                        Nothing the first time and others
+                      </blockquote>
+                    </figure>
+                  ))}
+                </div>
+                <div className="flex gap-4 marquee-inner flex-row">
+                  {Array.from({ length: 10 }).map((_, index) => (
+                    <figure
+                      key={index}
+                      className="relative w-64 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer"
+                    >
+                      <div className="flex flex-row items-center gap-2">
+                        <div>
+                          <User />
+                        </div>
+                        <div className="flex flex-col">
+                          <figcaption className="font-medium text-sm">
+                            Username
+                          </figcaption>
+                          <p className="text-muted-foreground text-xs font-medium">
+                            @username
+                          </p>
+                        </div>
+                      </div>
+                      <blockquote className="mt-2 text-sm">
+                        Nothing the first time and others
+                      </blockquote>
+                    </figure>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
