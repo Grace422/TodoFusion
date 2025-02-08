@@ -8,10 +8,12 @@
 :root {
   --background: #ffffff;
   --foreground: #030712;
+  --border-color: rgba(0, 0, 0, 0.1);
 }
 .dark {
   --background: #ffffff;
   --foreground: #030712;
+  --border-color: rgba(255, 255, 255, 0.1);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -20,15 +22,20 @@
   }
 }
 .borders{
-  border: 1px solid rgb(255, 255, 255, 0.1)
+  border: 1px solid rgb(--border-color)
+}
+.border-light{
+  border: 1px solid rgb(0, 0, 0, 0.1)
 }
 .borders-nav{
   border: 1px solid rgb(255, 255, 255, 0.1);
   border-radius: 50px;
-
 }
 .border-bottom{
-  border-bottom: 1px solid rgb(255, 255, 255, 0.1)
+  border-bottom: 1px solid rgb(--border-color)
+}
+.border-bottom-light{
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1)
 }
 .shadow{
   box-shadow: 0px 4px 8px 0 rgba(59, 92, 163, 0.2),
