@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { User } from "lucide-react";
 import Navbar from "../../components/Navbar";
+import Link from "next/link";
 
 export default function Home() {
   const iconData = [
@@ -59,34 +60,30 @@ export default function Home() {
           <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden marquee py-10">
             <div className="w-full h-full flex overflow-hidden p-2 flex-row gap-20 marquee-content">
               <div className="flex flex-row gap-20">
-              {iconData.map((data, index) => (
-                <div
-                  key={index}
-                  className="flex flex-row items-center justify-center gap-2"
-                >
-                  <img
-                    src={data.icon}
-                    alt={data.name}
-                    className="w-10 text-white dark:text-black"
-                  />
-                  <p className="text-white dark:text-black">{data.name}</p>
-                </div>
-              ))}
+                {iconData.map((data, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-row items-center justify-center gap-2"
+                  >
+                    <img
+                      src={data.icon}
+                      alt={data.name}
+                      className="w-10 text-white dark:text-black"
+                    />
+                    <p className="text-white dark:text-black">{data.name}</p>
+                  </div>
+                ))}
               </div>
               <div className="flex flex-row gap-20">
-              {iconData.map((data, index) => (
-                <div
-                  key={index + iconData.length}
-                  className="flex flex-row items-center justify-center gap-2"
-                >
-                  <img
-                    src={data.icon}
-                    alt={data.name}
-                    className="w-10"
-                  />
-                  <p className="text-white dark:text-black">{data.name}</p>
-                </div>
-              ))}
+                {iconData.map((data, index) => (
+                  <div
+                    key={index + iconData.length}
+                    className="flex flex-row items-center justify-center gap-2"
+                  >
+                    <img src={data.icon} alt={data.name} className="w-10" />
+                    <p className="text-white dark:text-black">{data.name}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -162,7 +159,9 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-5 my-20 mx-auto max-w-3xl md:grid-cols-2">
             <div className="flex flex-col gap-4 p-8 rounded-xl dark:borders border-light">
               <div>
-                <h3 className="text-xl font-semibold text-white dark:text-black">Monthly plan</h3>
+                <h3 className="text-xl font-semibold text-white dark:text-black">
+                  Monthly plan
+                </h3>
                 <p className="text-slate-500 dark:text-black mt-4">
                   Flexible and affordable. Boost your productivity month by
                   month.
@@ -171,33 +170,45 @@ export default function Home() {
 
               <div className="flex flex-col gap-4 mt-4">
                 <div className="flex flex-row items-center justify-between">
-                  <span className="text-2xl font-semibold text-white dark:text-black">$4.9</span>
-                  <span className="text-muted-foreground text-white dark:text-black">/month</span>
+                  <span className="text-2xl font-semibold text-white dark:text-black">
+                    $4.9
+                  </span>
+                  <span className="text-muted-foreground text-white dark:text-black">
+                    /month
+                  </span>
                 </div>
 
-                <div className="flex flex-col gap-2 text-white dark:text-black">
+                <div className="flex flex-col gap-2 text-white dark:text-black px-4">
                   <div className="flex flex-row items-centergap-2">
-                    <span>.</span>
-                    <span>Full access to all features</span>
+                    <ul>
+                      <li className="list-disc">Full access to all features</li>
+                    </ul>
                   </div>
                   <div className="flex flex-row items-centergap-2">
-                    <span>.</span>
-                    <span>Regular updates and new features</span>
+                    <ul>
+                      <li className="list-disc">
+                        Regular updates and new features
+                      </li>
+                    </ul>
                   </div>
                   <div className="flex flex-row items-centergap-2">
-                    <span>.</span>
-                    <span>Premium support</span>
+                    <ul>
+                      <li className="list-disc">Premium support</li>
+                    </ul>
                   </div>
                   <div className="flex flex-row items-centergap-2">
-                    <span>.</span>
-                    <span>No recurring fees</span>
+                    <ul>
+                      <li className="list-disc">No recurring fees</li>
+                    </ul>
                   </div>
                 </div>
               </div>
-            </div> 
+            </div>
             <div className="flex flex-col gap-4 p-8 dark:borders border-light rounded-xl">
               <div>
-                <h3 className="text-xl font-semibold text-white dark:text-black">Pay once lifetime</h3>
+                <h3 className="text-xl font-semibold text-white dark:text-black">
+                  Pay once lifetime
+                </h3>
                 <p className="text-slate-500 dark:text-black mt-4">
                   One-time payment. Unlimited access forever. Ultimate
                   productivity investment.
@@ -210,22 +221,28 @@ export default function Home() {
                   <span className="text-muted-foreground">/month</span>
                 </div>
 
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 px-4">
                   <div className="flex flex-row items-centergap-2">
-                    <span>.</span>
-                    <span>Full access to all features</span>
+                    <ul>
+                      <li className="list-disc">Full access to all features</li>
+                    </ul>
                   </div>
                   <div className="flex flex-row items-centergap-2">
-                    <span>.</span>
-                    <span>Regular updates and new features</span>
+                    <ul>
+                      <li className="list-disc">
+                        Regular updates and new features
+                      </li>
+                    </ul>
                   </div>
                   <div className="flex flex-row items-centergap-2">
-                    <span>.</span>
-                    <span>Premium support</span>
+                    <ul>
+                      <li className="list-disc">Premium support</li>
+                    </ul>
                   </div>
                   <div className="flex flex-row items-centergap-2">
-                    <span>.</span>
-                    <span>No recurring fees</span>
+                    <ul>
+                      <li className="list-disc">No recurring fees</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -411,21 +428,39 @@ export default function Home() {
               <div className="flex flex-col gap-5 flex-1">
                 <h3>Pages</h3>
                 <ul className="flex flex-col gap-2 text-gray-400">
-                  <li>Home</li>
-                  <li>Features</li>
-                  <li>Integrations</li>
-                  <li>Pricing</li>
-                  <li>Docs</li>
-                  <li>Contacts</li>
+                  <Link href="/">
+                    <li>Home</li>
+                  </Link>
+                  <Link href="/features">
+                    <li>Features</li>
+                  </Link>
+                  <Link href="/integrations">
+                    <li>Integrations</li>
+                  </Link>
+                  <Link href="/pricing">
+                    <li>Pricing</li>
+                  </Link>
+                  <Link href="/docs">
+                    <li>Docs</li>
+                  </Link>
+                  <Link href="/contacts">
+                    <li>Contacts</li>
+                  </Link>
                 </ul>
               </div>
               <div className="flex-1">
                 <div className="flex flex-col gap-5">
                   <h3>Pages</h3>
                   <ul className="flex flex-col gap-2 text-gray-400">
-                    <li>Features</li>
-                    <li>Integrations</li>
-                    <li>Docs</li>
+                    <Link href="/features">
+                      <li>Features</li>
+                    </Link>
+                    <Link href="/integretions">
+                      <li>Integrations</li>
+                    </Link>
+                    <Link href="/docs">
+                      <li>Docs</li>
+                    </Link>
                   </ul>
                 </div>
               </div>
@@ -444,7 +479,9 @@ export default function Home() {
           </div>
           <div className="py-10 flex flex-col gap-5">
             <div className="flex items-center justify-between ">
-              <p className="text-slate-500">© 2024 TodoFusion. All rights reserved.</p>
+              <p className="text-slate-500">
+                © 2024 TodoFusion. All rights reserved.
+              </p>
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 rounded-md cursor-pointer dark:bg-slate-600 bg-slate-900" />
                 <div className="w-6 h-6 rounded-md cursor-pointer dark:bg-slate-600 bg-slate-900" />
@@ -452,7 +489,7 @@ export default function Home() {
               </div>
             </div>
             <p className="text-sm text-center font-medium text-white dark:text-black">
-              Made with 🩶{" "} by
+              Made with 🩶 by
               <a className="duration-200 text-blue-800"> Kwaham Grace.</a>{" "}
             </p>
           </div>

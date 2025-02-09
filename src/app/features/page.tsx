@@ -1,8 +1,13 @@
+import Navbar from "../../../components/Navbar";
+
 const Features = () => {
     return ( 
+        <>
+        <Navbar/>
         <div>
-            <p>Features</p>
+            <p className="text-white dark:text-black">Features</p>
         </div>
+        </>
      );
 }
  

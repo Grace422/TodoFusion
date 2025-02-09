@@ -1,8 +1,12 @@
+import Navbar from "../../../components/Navbar";
 const Pricing = () => {
     return ( 
+        <>
+        <Navbar/>
         <div>
-            <h1>Pricing</h1>
+            <h1 className="text-white dark:text-black">Pricing</h1>
         </div>
+        </>
      );
 }
  
