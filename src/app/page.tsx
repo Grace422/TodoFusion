@@ -11,6 +11,8 @@ export default function Home() {
     { icon: "/linkedin.png", name: "Linkedin" },
     { icon: "/twitter.png", name: "Twitter" },
     { icon: "/facebook.png", name: "Facebook" },
+    { icon: "/youtube.png", name: "Youtube" },
+    { icon: "/messager.png", name: "Messenger" },
   ];
   return (
     <>
@@ -157,7 +159,7 @@ export default function Home() {
 
         <div className="w-full h-full">
           <div className="grid grid-cols-1 gap-5 my-20 mx-auto max-w-3xl md:grid-cols-2">
-            <div className="flex flex-col gap-4 p-8 rounded-xl dark:borders border-light">
+            <div className="flex flex-col gap-4 p-8 rounded-xl borders">
               <div>
                 <h3 className="text-xl font-semibold text-white dark:text-black">
                   Monthly plan
@@ -204,7 +206,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-4 p-8 dark:borders border-light rounded-xl">
+            <div className="flex flex-col gap-4 p-8 borders rounded-xl">
               <div>
                 <h3 className="text-xl font-semibold text-white dark:text-black">
                   Pay once lifetime
@@ -274,7 +276,7 @@ export default function Home() {
                 {Array.from({ length: 10 }).map((_, index) => (
                   <figure
                     key={index}
-                    className="relative w-64 p-4 borders border-light over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer"
+                    className="relative w-64 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer"
                   >
                     <div className="flex flex-row items-center gap-2">
                       <div>
@@ -297,7 +299,7 @@ export default function Home() {
                 {Array.from({ length: 10 }).map((_, index) => (
                   <figure
                     key={index}
-                    className="relative w-64 p-4 borders border-light over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer"
+                    className="relative w-64 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer"
                   >
                     <div className="flex flex-row items-center gap-2">
                       <div>
@@ -325,7 +327,7 @@ export default function Home() {
                   {Array.from({ length: 10 }).map((_, index) => (
                     <figure
                       key={index}
-                      className="relative w-64 p-4 borders border-light over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointe"
+                      className="relative w-64 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointe"
                     >
                       <div className="flex flex-row items-center gap-2">
                         <div>
@@ -350,7 +352,7 @@ export default function Home() {
                   {Array.from({ length: 10 }).map((_, index) => (
                     <figure
                       key={index}
-                      className="relative w-64 p-4 borders border-light over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer"
+                      className="relative w-64 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-background cursor-pointer"
                     >
                       <div className="flex flex-row items-center gap-2">
                         <div>
@@ -378,7 +380,7 @@ export default function Home() {
       </div>
 
       <div className="h-full w-full mx-auto px-4 my-32 max-w-[1350px] md:px-20 text-white dark:text-black">
-        <div className="flex flex-col items-start justify-start  w-full px-4 md:px-6 rounded-lg borders border-light py-4 md:py-8 lg:rounded-2xl md:justify-between md:items-center md:flex-row">
+        <div className="flex flex-col items-start justify-start  w-full px-4 md:px-6 rounded-lg borders py-4 md:py-8 lg:rounded-2xl md:justify-between md:items-center md:flex-row">
           <div className="flex flex-col items-start gap-4 w-full max-w-lg">
             <h4 className="text-xl font-semibold lg:text-4xl md:text-2xl">
               Join our <span className="text-slate-500">newsletter</span>
@@ -411,7 +413,7 @@ export default function Home() {
 
       <div className="py-10">
         <div className="h-full w-full mx-auto px-4 max-w-[1350px] md:px-20">
-          <div className="flex flex-col gap-10 pb-28 border-b border-bottom border-bottom-light lg:flex-row text-white dark:text-black">
+          <div className="flex flex-col gap-10 pb-28 border-bottom lg:flex-row text-white dark:text-black">
             <div className="flex flex-1 gap-5 flex-col">
               <div className="flex gap-2 items-center text-lg font-medium">
                 <div className="size-8 rounded-md dark:bg-slate-600 bg-slate-900 transition-all duration-200" />

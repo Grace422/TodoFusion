@@ -5,17 +5,9 @@ import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    if (isDarkMode) {
-      document.body.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    } 
-    else {
-      document.body.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    }
-  };
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme === "dark") {
@@ -26,7 +18,6 @@ const Navbar = () => {
       document.body.classList.add("light");
     }
   }, []);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +32,18 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const [isOpen, setIsOpen] = useState(false);
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    if (isDarkMode) {
+      document.body.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    } 
+    else {
+      document.body.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    }
+  };
+  
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
@@ -88,8 +90,8 @@ const Navbar = () => {
               </button>
               <div className="h-8 w-[1px] bg-gray-500" />
               <button
-                className={`hidden lg:flex bg-violet-800 text-white px-6 py-2 shadow
-              ${isScrolled ? "rounded-full" : "rounded-md"}`}
+                className={`hidden lg:flex bg-violet-800 text-white px-6 py-2 shadow 
+              ${isScrolled ? "rounded-full transition-all duration-200 ease-in-out" : "rounded-md"}`}
               >
                 Get Template
               </button>
