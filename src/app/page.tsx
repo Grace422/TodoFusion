@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { User } from "lucide-react";
 import Navbar from "../../components/Navbar";
-import Link from "next/link";
 
 export default function Home() {
   const iconData = [
@@ -39,13 +38,14 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="borders h-full rounded-3xl image-color backdrop-blur-lg p-6 shadow-[0px_0px_100px_5px_rgba(59,92,163,0.4)]">
+          <div className="borders h-full rounded-3xl image-color overflow-hidden relative backdrop-blur-lg p-1 shadow-[0px_0px_100px_5px_rgba(59,92,163,0.4)] running-div">
             <Image
               src="/set.webp"
               alt="site picture"
               width={900}
               height={900}
               objectFit="contain"
+              className="z-0"
             />
           </div>
         </div>
@@ -140,6 +140,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className="gradient"></div>
 
       <div className="h-full w-full mx-auto max-w-[1350px] px-4 flex flex-col py-32 relative gap-10 md:px-20">
         <div className="w-full h-full text-white dark:text-black">
@@ -375,125 +377,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="h-full w-full mx-auto px-4 my-32 max-w-[1350px] md:px-20 text-white dark:text-black">
-        <div className="flex flex-col items-start justify-start  w-full px-4 md:px-6 rounded-lg borders py-4 md:py-8 lg:rounded-2xl md:justify-between md:items-center md:flex-row">
-          <div className="flex flex-col items-start gap-4 w-full max-w-lg">
-            <h4 className="text-xl font-semibold lg:text-4xl md:text-2xl">
-              Join our <span className="text-slate-500">newsletter</span>
-            </h4>
-            <p className="text-base text-slate-500">
-              Join our newsletter for exclusive insights, announcements, and
-              special offers delivered directly to your inbox.
-            </p>
-          </div>
-          <div className="flex flex-col gap-2 items-start w-full mt-5 md:min-w-80 md:mt-0 md:w-max">
-            <form
-              action=""
-              className="flex flex-col items-center gap-2 w-full md:max-w-xs md:flex-row"
-            >
-              <input
-                type="text"
-                className="h-9 w-full flex rounded-md borders bg-transparent px-3 py-1 text-sm border-light"
-                placeholder="example@gmail.com"
-              />
-              <button className="rounded-md text-white/50 bg-violet-800/50 px-5 py-1.5 w-full lg:w-auto">
-                Submit
-              </button>
-            </form>
-            <p className="text-xs text-gray-500">
-              By subscribing you agree with our Privacy Policy
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="py-10">
-        <div className="h-full w-full mx-auto px-4 max-w-[1350px] md:px-20">
-          <div className="flex flex-col gap-10 pb-28 border-bottom lg:flex-row text-white dark:text-black">
-            <div className="flex flex-1 gap-5 flex-col">
-              <div className="flex gap-2 items-center text-lg font-medium">
-                <div className="size-8 rounded-md dark:bg-slate-600 bg-slate-900 transition-all duration-200" />
-                <span>
-                  Todo<span className="text-gray-400">Fusion</span>
-                </span>
-              </div>
-              <p className="text-base text-gray-400">
-                Simplify tasks, boost productivity, and manage projects
-                seamlessly.
-              </p>
-            </div>
-            <div className="flex flex-row flex-1 gap-10">
-              <div className="flex flex-col gap-5 flex-1">
-                <h3>Pages</h3>
-                <ul className="flex flex-col gap-2 text-gray-400">
-                  <Link href="/">
-                    <li>Home</li>
-                  </Link>
-                  <Link href="/features">
-                    <li>Features</li>
-                  </Link>
-                  <Link href="/integrations">
-                    <li>Integrations</li>
-                  </Link>
-                  <Link href="/pricing">
-                    <li>Pricing</li>
-                  </Link>
-                  <Link href="/docs">
-                    <li>Docs</li>
-                  </Link>
-                  <Link href="/contacts">
-                    <li>Contacts</li>
-                  </Link>
-                </ul>
-              </div>
-              <div className="flex-1">
-                <div className="flex flex-col gap-5">
-                  <h3>Pages</h3>
-                  <ul className="flex flex-col gap-2 text-gray-400">
-                    <Link href="/features">
-                      <li>Features</li>
-                    </Link>
-                    <Link href="/integretions">
-                      <li>Integrations</li>
-                    </Link>
-                    <Link href="/docs">
-                      <li>Docs</li>
-                    </Link>
-                  </ul>
-                </div>
-              </div>
-              <div className="flex-1">
-                <div className="flex flex-col gap-5">
-                  <h3>Pages</h3>
-                  <ul className="flex flex-col gap-2 text-gray-400">
-                    <li>Blog</li>
-                    <li>FAQ</li>
-                    <li>FAQ</li>
-                    <li>FAQ</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="py-10 flex flex-col gap-5">
-            <div className="flex items-center justify-between ">
-              <p className="text-slate-500">
-                © 2024 TodoFusion. All rights reserved.
-              </p>
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-md cursor-pointer dark:bg-slate-600 bg-slate-900" />
-                <div className="w-6 h-6 rounded-md cursor-pointer dark:bg-slate-600 bg-slate-900" />
-                <div className="w-6 h-6 rounded-md cursor-pointer dark:bg-slate-600 bg-slate-900" />
-              </div>
-            </div>
-            <p className="text-sm text-center font-medium text-white dark:text-black">
-              Made with 🩶 by
-              <a className="duration-200 text-blue-800"> Kwaham Grace.</a>{" "}
-            </p>
           </div>
         </div>
       </div>

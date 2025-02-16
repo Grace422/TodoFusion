@@ -3,7 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
+import { usePathname } from "next/navigation";
+
 const Navbar = () => {
+  const pathname = usePathname();
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -37,13 +40,12 @@ const Navbar = () => {
     if (isDarkMode) {
       document.body.classList.remove("dark");
       localStorage.setItem("theme", "light");
-    } 
-    else {
+    } else {
       document.body.classList.add("dark");
       localStorage.setItem("theme", "dark");
     }
   };
-  
+
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
@@ -91,12 +93,16 @@ const Navbar = () => {
               <div className="h-8 w-[1px] bg-gray-500" />
               <button
                 className={`hidden lg:flex bg-violet-800 text-white px-6 py-2 shadow 
-              ${isScrolled ? "rounded-full transition-all duration-200 ease-in-out" : "rounded-md"}`}
+              ${
+                isScrolled
+                  ? "rounded-full transition-all duration-200 ease-in-out"
+                  : "rounded-md"
+              }`}
               >
                 Get Template
               </button>
 
-              <div className="relative top-[-20] left-4">
+              <div className="relative top-[-20] left-4 transition-all duration-200">
                 {!isOpen ? (
                   <Image
                     src="/icon-hamburger.svg"
@@ -122,13 +128,53 @@ const Navbar = () => {
         </nav>
       </div>
       {isOpen && (
-        <div className="flex flex-col items-start absolute bg-violet-800 w-1/2 px-6 py-10 top-0 left-0 z-10 h-full gap-8 dark:text-black text-white">
-          <Link href="/">Home</Link>
-          <Link href="/features">Features</Link>
-          <Link href="/integrations">Integrations</Link>
-          <Link href="/pricing">Pricing</Link>
-          <Link href="/docs">Docs</Link>
-          <Link href="/contacts">Contacts</Link>
+        <div className="flex flex-col items-start fixed dark:bg-white bg-[#030712] w-1/2 px-6 py-20 top-0 left-0 z-10 h-full gap-8 dark:text-black">
+          <Link
+            href="/"
+            className={` ${pathname === "/" ? "text-gray-400" : "dark:text-black text-white"}`}
+          >
+            Home
+          </Link>
+          <Link
+            href="/features"
+            className={` ${
+              pathname === "/features" ? "text-gray-400" : "dark:text-black text-white"
+            }`}
+          >
+            Features
+          </Link>
+          <Link
+            href="/integrations"
+            className={` ${
+              pathname === "/integrations" ? "text-gray-400" : "dark:text-black text-white"
+            }`}
+          >
+            Integrations
+          </Link>
+          <Link
+            href="/pricing"
+            className={` ${
+              pathname === "/pricing" ? "text-gray-400" : "dark:text-black text-white"
+            }`}
+          >
+            Pricing
+          </Link>
+          <Link
+            href="/docs"
+            className={` ${
+              pathname === "/docs" ? "text-gray-400" : "dark:text-black text-white"
+            }`}
+          >
+            Docs
+          </Link>
+          <Link
+            href="/contacts"
+            className={` ${
+              pathname === "/contacts" ? "text-gray-400" : "dark:text-black text-white"
+            }`}
+          >
+            Contacts
+          </Link>
         </div>
       )}
     </>
