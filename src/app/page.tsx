@@ -67,7 +67,7 @@ export default function Home() {
                     key={index}
                     className="flex flex-row items-center justify-center gap-2"
                   >
-                    <img
+                    <Image
                       src={data.icon}
                       alt={data.name}
                       className="w-10 text-white dark:text-black"
@@ -82,7 +82,7 @@ export default function Home() {
                     key={index + iconData.length}
                     className="flex flex-row items-center justify-center gap-2"
                   >
-                    <img src={data.icon} alt={data.name} className="w-10" />
+                    <Image src={data.icon} alt={data.name} className="w-10" />
                     <p className="text-white dark:text-black">{data.name}</p>
                   </div>
                 ))}
@@ -153,7 +153,7 @@ export default function Home() {
               What are peaople saying
             </h2>
             <p className="text-slate-500 mt-6">
-              See how fusion empowers businesses of all sizes. Here's what real
+              See how fusion empowers businesses of all sizes. Here&apos;s what real
               people are saying on Twitter
             </p>
           </div>
@@ -265,7 +265,7 @@ export default function Home() {
               What are peaople saying
             </h2>
             <p className="mt-6 text-slate-500 dark:text-black">
-              See how fusion empowers businesses of all sizes. Here's what real
+              See how fusion empowers businesses of all sizes. Here&apos;s what real
               people are saying on Twitter
             </p>
           </div>
