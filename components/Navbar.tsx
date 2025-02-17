@@ -127,17 +127,18 @@ const Navbar = () => {
           </div>
         </nav>
       </div>
-      {isOpen && (
-        <div className="flex flex-col items-start fixed dark:bg-white bg-[#030712] w-1/2 px-6 py-20 top-0 left-0 z-10 h-full gap-8 dark:text-black">
+        <div className={`fixed dark:bg-white bg-[#030712] w-1/2 px-6 py-20 top-0 left-0 z-10 h-full gap-8 dark:text-black flex flex-col items-start 
+              transition-transform duration-[750ms] ease-out 
+              ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
           <Link
             href="/"
-            className={` ${pathname === "/" ? "text-gray-400" : "dark:text-black text-white"}`}
+            className={`opacity-0 animate-fadeIn delay-100 ${pathname === "/" ? "text-gray-400" : "dark:text-black text-white"}`}
           >
             Home
           </Link>
           <Link
             href="/features"
-            className={` ${
+            className={`opacity-0 animate-fadeIn delay-200 ${
               pathname === "/features" ? "text-gray-400" : "dark:text-black text-white"
             }`}
           >
@@ -145,7 +146,7 @@ const Navbar = () => {
           </Link>
           <Link
             href="/integrations"
-            className={` ${
+            className={`opacity-0 animate-fadeIn delay-300 ${
               pathname === "/integrations" ? "text-gray-400" : "dark:text-black text-white"
             }`}
           >
@@ -153,7 +154,7 @@ const Navbar = () => {
           </Link>
           <Link
             href="/pricing"
-            className={` ${
+            className={`opacity-0 animate-fadeIn delay-400 ${
               pathname === "/pricing" ? "text-gray-400" : "dark:text-black text-white"
             }`}
           >
@@ -161,7 +162,7 @@ const Navbar = () => {
           </Link>
           <Link
             href="/docs"
-            className={` ${
+            className={`opacity-0 animate-fadeIn delay-500 ${
               pathname === "/docs" ? "text-gray-400" : "dark:text-black text-white"
             }`}
           >
@@ -169,14 +170,13 @@ const Navbar = () => {
           </Link>
           <Link
             href="/contacts"
-            className={` ${
+            className={`opacity-0 animate-fadeIn delay-700 ${
               pathname === "/contacts" ? "text-gray-400" : "dark:text-black text-white"
             }`}
           >
             Contacts
           </Link>
         </div>
-      )}
     </>
   );
 };
