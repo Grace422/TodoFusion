@@ -71,6 +71,7 @@ export default function Home() {
                       src={data.icon}
                       alt={data.name}
                       className="w-10 text-white dark:text-black"
+                      width={50} height={50}
                     />
                     <p className="text-white dark:text-black">{data.name}</p>
                   </div>
@@ -82,7 +83,7 @@ export default function Home() {
                     key={index + iconData.length}
                     className="flex flex-row items-center justify-center gap-2"
                   >
-                    <Image src={data.icon} alt={data.name} className="w-10" />
+                    <Image src={data.icon} alt={data.name} className="w-10" width={50} height={50}/>
                     <p className="text-white dark:text-black">{data.name}</p>
                   </div>
                 ))}
