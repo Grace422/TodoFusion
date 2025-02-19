@@ -102,7 +102,7 @@ const Navbar = () => {
                 Get Template
               </button>
 
-              <div className="relative top-[-20] left-4 transition-all duration-200">
+              <div className="relative -top-5 left-4 transition-all duration-200">
                 {!isOpen ? (
                   <Image
                     src="/icon-hamburger.svg"
