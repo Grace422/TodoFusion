@@ -132,13 +132,13 @@ const Navbar = () => {
               ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
           <Link
             href="/"
-            className={`opacity-0 animate-fadeIn delay-100 ${pathname === "/" ? "text-gray-400" : "dark:text-black text-white"}`}
+            className={`opacity-1 animate-fadeIn delay-100 ${pathname === "/" ? "text-gray-400" : "dark:text-black text-white"}`}
           >
             Home
           </Link>
           <Link
             href="/features"
-            className={`opacity-0 animate-fadeIn delay-200 ${
+            className={`opacity-1 animate-fadeIn delay-200 ${
               pathname === "/features" ? "text-gray-400" : "dark:text-black text-white"
             }`}
           >
@@ -146,7 +146,7 @@ const Navbar = () => {
           </Link>
           <Link
             href="/integrations"
-            className={`opacity-0 animate-fadeIn delay-300 ${
+            className={`opacity-1 animate-fadeIn delay-300 ${
               pathname === "/integrations" ? "text-gray-400" : "dark:text-black text-white"
             }`}
           >
@@ -154,7 +154,7 @@ const Navbar = () => {
           </Link>
           <Link
             href="/pricing"
-            className={`opacity-0 animate-fadeIn delay-400 ${
+            className={`opacity-1 animate-fadeIn delay-400 ${
               pathname === "/pricing" ? "text-gray-400" : "dark:text-black text-white"
             }`}
           >
@@ -162,7 +162,7 @@ const Navbar = () => {
           </Link>
           <Link
             href="/docs"
-            className={`opacity-0 animate-fadeIn delay-500 ${
+            className={`opacity-1 animate-fadeIn delay-500 ${
               pathname === "/docs" ? "text-gray-400" : "dark:text-black text-white"
             }`}
           >
@@ -170,7 +170,7 @@ const Navbar = () => {
           </Link>
           <Link
             href="/contacts"
-            className={`opacity-0 animate-fadeIn delay-700 ${
+            className={`opacity-1 animate-fadeIn delay-700 ${
               pathname === "/contacts" ? "text-gray-400" : "dark:text-black text-white"
             }`}
           >
