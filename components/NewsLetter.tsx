@@ -1,4 +1,14 @@
+"use client"
+import { useState } from 'react'
 const NewsLetter = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+
+    setTimeout(() => setIsSubmitted(false), 1000);
+  };
     return ( 
         <div className="h-full w-full mx-auto px-4 my-32 max-w-[1350px] md:px-20 text-white dark:text-black">
         <div className="flex flex-col items-start justify-start  w-full px-4 md:px-6 rounded-lg borders py-4 md:py-8 lg:rounded-2xl md:justify-between md:items-center md:flex-row">
@@ -21,9 +31,12 @@ const NewsLetter = () => {
                 className="h-9 w-full flex rounded-md borders bg-transparent px-3 py-1 text-sm border-light"
                 placeholder="example@gmail.com"
               />
-              <button className="rounded-md text-white/50 bg-violet-800/50 px-5 py-1.5 w-full lg:w-auto">
+              <div className='flex gap-2'>
+              <button className="rounded-md text-white/50 bg-violet-800/50 px-5 py-1.5 w-full lg:w-auto" onClick={handleSubmit}>
                 Submit
               </button>
+              {isSubmitted && <span className="text-green-600 text-sm flex gap-2 items-center">Submitted</span>}
+              </div>
             </form>
             <p className="text-xs text-gray-500">
               By subscribing you agree with our Privacy Policy
