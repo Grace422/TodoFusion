@@ -1,18 +1,9 @@
 import Image from "next/image";
 import { User } from "lucide-react";
 import Navbar from "../../components/Navbar";
+import { TopIcons } from "./index";
 
 export default function Home() {
-  const iconData = [
-    { icon: "/apple.png", name: "Apple" },
-    { icon: "/github.png", name: "Github" },
-    { icon: "/instagram.png", name: "Instagram" },
-    { icon: "/linkedin.png", name: "Linkedin" },
-    { icon: "/twitter.png", name: "Twitter" },
-    { icon: "/facebook.png", name: "Facebook" },
-    { icon: "/youtube.png", name: "Youtube" },
-    { icon: "/messager.png", name: "Messenger" },
-  ];
   return (
     <>
       <Navbar />
@@ -62,28 +53,25 @@ export default function Home() {
           <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden marquee py-10">
             <div className="w-full h-full flex overflow-hidden p-2 flex-row gap-20 marquee-content">
               <div className="flex flex-row gap-20">
-                {iconData.map((data, index) => (
+                {TopIcons.map((data, index) => (
                   <div
                     key={index}
                     className="flex flex-row items-center justify-center gap-2"
                   >
-                    <Image
-                      src={data.icon}
-                      alt={data.name}
+                    <data.icon
                       className="w-10 text-white dark:text-black"
-                      width={50} height={50}
                     />
                     <p className="text-white dark:text-black">{data.name}</p>
                   </div>
                 ))}
               </div>
               <div className="flex flex-row gap-20">
-                {iconData.map((data, index) => (
+                {TopIcons.map((data, index) => (
                   <div
-                    key={index + iconData.length}
+                    key={index + TopIcons.length}
                     className="flex flex-row items-center justify-center gap-2"
                   >
-                    <Image src={data.icon} alt={data.name} className="w-10" width={50} height={50}/>
+                    <data.icon className="w-10"/>
                     <p className="text-white dark:text-black">{data.name}</p>
                   </div>
                 ))}
